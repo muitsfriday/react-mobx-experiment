@@ -1,13 +1,26 @@
+//import 'react-hot-loader/patch';
+import 'materialize-css/dist/css/materialize.min.css'
+import 'jquery'
+import 'materialize-css/dist/js/materialize.min'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import HelloWorld from './components/HelloWorld'
 
-console.log('aaaaav')
+import CounterStore from './stores/CounterStore'
 
-class HelloWorld extends React.Component {
+
+class App extends React.Component {
     render() {
-        return <div>Hello World 7</div>
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col s12"><HelloWorld store={new CounterStore()} /></div>
+                </div>
+            </div>
+        )
     }
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))

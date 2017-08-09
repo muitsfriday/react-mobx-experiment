@@ -1,3 +1,10 @@
 {
-  "presets": [["env", {"modules": false}], "react"]
+  "presets": [["env", {"modules": false}], "react", "stage-0", "stage-1"],
+  "plugins": [/*"react-hot-loader/babel"*/ "transform-decorators-legacy"],
+  "env": {
+    "production": {
+      "presets": [["env", {"modules": false}], "react-optimize", "stage-0", "stage-1"],
+      "plugins": [/*"react-hot-loader/babel"*/ "transform-decorators-legacy"]
+    }
+  }
 }
